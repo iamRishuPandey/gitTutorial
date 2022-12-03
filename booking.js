@@ -20,9 +20,23 @@ function onSubmit(e) {
     // Remove error after 3 seconds
     setTimeout(() => msg.remove(), 3000);
   } else {
-    localStorage.setItem('name',`${nameInput.value}`); 
-    localStorage.setItem('email',`${emailInput.value}`); 
-    //  localStorage.removeItem('name');  
-    //  localStorage.removeItem('email');   
+
+    let users = JSON.parse(localStorage.getItem("users"));
+    if (users === null) {
+        //If no stored data, create empty array
+        users = [];
+    }
+    let user = {
+        name: `${nameInput.value}`,
+        email : `${emailInput.value}`
+    };
+
+    users.push(user);
+
+    
+
+    localStorage.setItem("users",JSON.stringify(users));
+   
+    console.log(users);
 }
 }
