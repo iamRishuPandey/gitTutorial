@@ -7,6 +7,101 @@
     <title>Document</title>
 </head>
 <body>
-   <script src="simple.js"></script> 
+   <script>
+    // class student {
+//     static count =0
+//     constructor(name,age,phone_number, marks){
+//         this.name = `${name}`,
+//         this.age = `${age}`,
+//         this.phone_number = `${phone_number}`,
+//         this.marks = `${marks}`,
+//         student.countStudent();
+//     }
+
+//     count() {
+//         count = count+1;
+//     }
+
+    
+//     static countStudent() {
+
+//         return(student.count++);    
+
+//     }
+//      eligible(){
+
+//         if(this.marks >=40){
+
+//             console.log(`${this.name} age ${this.age} is eligible`);
+
+//         }
+
+//         else if(this.marks<40){
+
+//             console.log(`${this.name} age ${this.age} is not eligible`);
+
+//         }
+
+//     }
+
+// }
+
+// const rishu = new student('rishu', '25','7738014352','45');
+// const rohit = new student('rohit', '25','7738014342','25');
+// const raju = new student('raju', '25','7738014332','35');
+// const rohan = new student('rohan', '25','7738014322','15');
+// const rahul = new student('rahul','19','7738014351','12');
+// console.log(student.countStudent());
+// rishu.eligible();
+// rohit.eligible();
+// raju.eligible();
+// rohan.eligible();
+// rahul.eligible();
+
+// fat arrow function
+"use strict"
+// var a = 4;
+// let square = () => {return a*a};
+// console.log(square());
+// var x = function () {
+//     this.val = 1;
+//     setTimeout(() => {
+//         this.val++;
+//         console.log(this.val);
+//     }, 1)
+// };
+// var xx = new x();
+//  var x = (...n) => {
+//     console.log(n[0])
+//  };
+//  x(1,2,3);
+
+ class student {
+
+    constructor(name,age, marks){
+        this.name = `${name}`,
+        this.age = `${age}`,
+        this.marks = `${marks}`
+    }
+
+    setPlacementAge(minPlacementAge) {
+        return (minMarks) => {
+            if(this.marks > minMarks && this.age > minPlacementAge) {
+                console.log(this.name + " is ready for placements")
+            } else{
+                console.log(this.name + " is not ready for placements")
+            }
+        }
+    }
+
+}
+
+const rahul = new student('rahul','25','75');
+const rishu = new student('rishu','20','35');
+const rohit = new student('rohit','26','45');
+rahul.setPlacementAge(18)(40);
+rishu.setPlacementAge(18)(40);
+rohit.setPlacementAge(18)(40);
+   </script> 
 </body>
 </html>
